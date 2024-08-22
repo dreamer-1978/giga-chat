@@ -5,10 +5,13 @@ import {reqGiga} from './reqGiga.js'
 
 const app = express();
 app.use(cors());
+const corsOption = {
+  origin: "*"
+}
 const PORT = 3000;
 
 
-app.get("/data", async (req, res) => {
+app.get("/data", cors(corsOption), async (req, res) => {
   const request = req.query.content
   try {
     const gigaResponse = await reqGiga(request) 

@@ -9,10 +9,10 @@ async function sendFetch(event) {
     event.preventDefault()
     const formData = new FormData(form);
     const content = formData.get("input-text");
-    const response = await axios("https://giga-chat-teal.vercel.app//data", {
-      params: {
-        content: content,
-      },
+    const response = await axios("http://localhost:3000/data", {
+        params: {
+            content: content
+        }
     });
     const data = await response.data.message
     text.innerHTML = data
