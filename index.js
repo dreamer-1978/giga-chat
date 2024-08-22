@@ -12,6 +12,11 @@ const corsOption = {
 const PORT = 3000;
 
 
+
+app.get("/", cors(corsOption), async (req, res) => {
+  res.send("Server is Running");
+});
+
 app.get("/data", cors(corsOption), async (req, res) => {
   const request = req.query.content
   try {
