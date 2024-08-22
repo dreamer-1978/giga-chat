@@ -5,6 +5,7 @@ import {reqGiga} from './reqGiga.js'
 
 const app = express();
 app.use(cors());
+
 const corsOption = {
   origin: "*"
 }
